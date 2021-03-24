@@ -1,22 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+    <link rel="stylesheet" href="style.css" />
     <title>Coding Quiz</title>
 </head>
 <body>
-    <header>
-        <h1>Coding Quiz</h1>
-    </header>
-    <h1 class= "quiz"></h1>
-    <ol class= "questions">
-        <li class= "one"></li>
-        <li class= "two"></li>
-        <li class= "three"></li>
-        <li class= "four"></li>
-    </ol>
-    <h3 class= "result"></h3>
+    <section class="info">
+        <header>
+            <h1 class = "title">Welcome to Code Quiz</h1>
+        </header>
+        <h2 class = "intro">
+            The quiz is 10 questions long and it is timed. 
+            For every wrong question you will get timed deducted.
+            Once you either complete the quiz or time is up your
+            final score will be displayed and can input your name to 
+            add to the scoreboards. Press start to begin.
+        </h2>
+        <div class=buttons>
+            <button class = "start">Start</button>
+            <div class="answers">
+                <button class="answerA"></button>
+                <button class="answerB"></button>
+                <button class="answerC"></button>
+                <button class="answerD"></button>
+            </div>
+        </div>
+        <h2 class="result"></h2>
+    </section> 
+<script src="script.js"></script>
 </body>
 </html>

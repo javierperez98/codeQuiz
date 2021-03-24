@@ -9,7 +9,7 @@ var d = document.querySelector(".answerD");
 var answers = document.querySelector(".answers")
 var result = document.querySelector(".result")
 var timeEl = document.querySelector(".timeEl")
-var secondsLeft = 60;
+var secondsLeft = 90;
 
 function quizStarted() {
   intro.textContent = "";
@@ -29,13 +29,13 @@ function question1() {
   d.textContent = "D: Hyper Text MakeUp Language";
     
   answers.addEventListener("click", function(event) {
-    var element = event.target;
+    const element = event.target;
     if (element.matches(".answerA")) {
       result.textContent="Correct";
     }
     else{
       result.textContent="Wrong";
-      secondsLeft= secondsLeft-12;
+      secondsLeft-=5;
     }
     setTimeout(question2, 500)
   });
@@ -50,13 +50,13 @@ function question2() {
   d.textContent = "D: Condense Short Style";
 
   answers.addEventListener("click", function(event) {
-    var element = event.target;
+    const element = event.target;
     if (element.matches(".answerC")) {
       result.textContent="Correct";
     }
     else {
       result.textContent="Wrong";
-      secondsLeft= secondsLeft-12;
+      secondsLeft-=5;
     }
     setTimeout(question3, 500)
   });
@@ -71,13 +71,13 @@ function question3() {
   d.textContent = "D: JavaSign";
 
   answers.addEventListener("click", function(event) {
-    var element = event.target;
+    const element = event.target;
     if (element.matches(".answerB")) {
       result.textContent="Correct";
     }
     else {
       result.textContent="Wrong";
-      secondsLeft= secondsLeft-12;
+      secondsLeft-=5;
     }
     setTimeout(question4, 500)
   });
@@ -92,13 +92,13 @@ function question4() {
   d.textContent = "D: Object";
 
   answers.addEventListener("click", function(event) {
-    var element = event.target;
+    const element = event.target;
     if (element.matches(".answerA")) {
       result.textContent="Correct";
     }
     else {
       result.textContent="Wrong";
-      secondsLeft= secondsLeft-12;
+      secondsLeft-=5;
     }
     setTimeout(question5, 500)
   });
@@ -113,13 +113,13 @@ function question5() {
   d.textContent = "D: Bubbling";
 
   answers.addEventListener("click", function(event) {
-    var element = event.target;
+    const element = event.target;
     if (element.matches(".answerD")) {
       result.textContent="Correct";
     }
     else {
       result.textContent="Wrong";
-      secondsLeft= secondsLeft-12;
+      secondsLeft-=5;
     }
     setTimeout(End, 500)
   });
@@ -130,8 +130,8 @@ function setTime() {
     secondsLeft--;
     timeEl.textContent = secondsLeft;
     if(secondsLeft < 0) {
+      timeEl.textContent= "0";
       clearInterval(timerInterval);
-      timeEl.textContent = "";
       End();
     }
   }, 1000);

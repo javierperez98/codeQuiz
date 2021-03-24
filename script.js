@@ -10,6 +10,7 @@ var answers = document.querySelector(".answers")
 var result = document.querySelector(".result")
 var timeEl = document.querySelector(".timeEl")
 var secondsLeft = 90;
+var nameBox = document.querySelector(".name")
 
 function quizStarted() {
   intro.textContent = "";
@@ -138,6 +139,9 @@ function setTime() {
 }
 
 function End() {
+  question.innerHTML = "All done!";
+  intro.textContent= "Enter name to be added to the Highscore board!"
+  nameBox.style.display="block";
   a.style.display="none";
   b.style.display="none";
   c.style.display="none";

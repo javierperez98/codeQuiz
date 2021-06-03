@@ -1,5 +1,6 @@
 const questionNum = document.querySelector(".question-num");
 const askQuestion = document.querySelector(".ask-question");
+const displayScore = document.querySelector(".display-score");
 const answer1 = document.querySelector(".answer1");
 const answer2 = document.querySelector(".answer2");
 const answer3 = document.querySelector(".answer3");
@@ -8,8 +9,12 @@ const answerA = document.querySelector(".answerA");
 const answerB = document.querySelector(".answerB");
 const answerC = document.querySelector(".answerC");
 const answerD = document.querySelector(".answerD");
+const removeA = document.querySelector(".button-A");
+const removeB = document.querySelector(".button-B");
+const removeC = document.querySelector(".button-C");
+const removeD = document.querySelector(".button-D");
 const next = document.querySelector(".next-question");
-const finish = document.querySelector(".finish-page");
+const homePage = document.querySelector(".home-page");
 var percent = 0;
 
 const numQs = [
@@ -22,6 +27,7 @@ const numQs = [
 	"(8 of 10)",
 	"(9 of 10)",
 	"(10 of 10)",
+	"",
 ];
 const questions = [
 	'What is the correct JavaScript syntax to change the content of the HTML element below? ﹤p﹥ id="demo"﹥This is a demonstration.﹤/p﹥',
@@ -33,6 +39,7 @@ const questions = [
 	"How does a WHILE loop start?",
 	"How does a FOR loop start?",
 	"What is the correct way to write a JavaScript array?",
+	"",
 ];
 const As = [
 	'document.getElement("p").innerHTML = "Hello World!";',
@@ -44,6 +51,7 @@ const As = [
 	"loop( while i < 10 )",
 	"for( let i = 0; i < 5; i++ )",
 	"const numbers = { 1, 2, 3 }",
+	"",
 ];
 const Bs = [
 	'#demo.innerHTML = "Hello World!";',
@@ -55,6 +63,7 @@ const Bs = [
 	"while.loop( i < 10 )",
 	"for( let i = 0; i++ )",
 	"const numbers = [ 1, 2, 3 ]",
+	"",
 ];
 const Cs = [
 	'document.getElementByName("p").innerHTML = "Hello World!";',
@@ -66,6 +75,7 @@ const Cs = [
 	"while i < 10",
 	"for( let i = 0; i < 5)",
 	"const numbers = ( 1, 2, 3 )",
+	"",
 ];
 const Ds = [
 	'document.getElementById("demo").innerHTML = "Hello World!";',
@@ -77,12 +87,14 @@ const Ds = [
 	"while ( i < 10 )",
 	"for.loop( i )",
 	"const numbers = 1, 2, 3;",
+	"",
 ];
 
 nextQuestion = (e) => {
 	const num = e.target.value;
 
 	if (num == 0) {
+		homePage.setAttribute("href", "/index.html");
 		return;
 	}
 
@@ -165,8 +177,15 @@ nextQuestion = (e) => {
 		if (userAnswer === "B") {
 			percent += 10;
 		}
+		setNextQuestion(numQs[9], questions[9], As[9], Bs[9], Cs[9], Ds[9]);
 		next.value = 0;
-		finish.setAttribute("href", "/pages/finish.html");
+		removeA.remove();
+		removeB.remove();
+		removeC.remove();
+		removeD.remove();
+		enableBtn();
+		next.innerHTML = "Go Home";
+		displayScore.innerHTML = `You score a ${percent} on the quiz!`;
 	}
 };
 
@@ -187,9 +206,6 @@ resetBtns = () => {
 };
 
 enableBtn = () => {
-	if (next.value == 0) {
-		return;
-	}
 	next.removeAttribute("disabled");
 };
 

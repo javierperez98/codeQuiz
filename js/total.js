@@ -6,7 +6,7 @@ setScore = () => {
 	if (viewScore.value == 1) {
 		homePage.setAttribute("href", "/index.html");
 	}
-	totalScore.innerHTML = `You scored a ${""} on the quiz!`;
+	totalScore.innerHTML = `You scored a "" on the quiz!`;
 	viewScore.innerHTML = "Go Home";
 	viewScore.value = 1;
 };

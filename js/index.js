@@ -115,14 +115,14 @@ startTimer = (duration, display) => {
 		const num = e.target.value;
 
 		if (num == 0) {
-			return homePage.setAttribute("href", "/codeQuiz");
+			homePage.setAttribute("href", "/codeQuiz");
+			return;
 		}
 
 		next.setAttribute("disabled", "disabled");
 		const userAnswer = getSelectedAnswer("answers");
 
 		if (num == 1) {
-			homePage.setAttribute("href", "/codeQuiz/index.html");
 			if (userAnswer === "B") {
 				percent += 10;
 			} else {

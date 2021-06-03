@@ -115,7 +115,7 @@ startTimer = (duration, display) => {
 		const num = e.target.value;
 
 		if (num == 0) {
-			homePage.setAttribute("href", "/index.html");
+			homePage.setAttribute("href", "/codeQuiz/index.html");
 			return;
 		}
 

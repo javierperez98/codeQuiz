@@ -90,136 +90,187 @@ const Ds = [
 	"",
 ];
 
-nextQuestion = (e) => {
-	const num = e.target.value;
+startTimer = (duration, display) => {
+	var timer = duration,
+		minutes,
+		seconds;
 
-	if (num == 0) {
-		homePage.setAttribute("href", "/index.html");
-		return;
-	}
+	const clock = setInterval(() => {
+		minutes = parseInt(timer / 60, 10);
+		seconds = parseInt(timer % 60, 10);
+		minutes = minutes < 10 ? "0" + minutes : minutes;
+		seconds = seconds < 10 ? "0" + seconds : seconds;
+		display.textContent = minutes + ":" + seconds;
+		--timer;
 
-	next.setAttribute("disabled", "disabled");
-	const userAnswer = getSelectedAnswer("answers");
+		if (timer <= 0 || next.value == 0) {
+			clearInterval(clock);
+			display.textContent = "";
+			setNextQuestion(numQs[9], questions[9], As[9], Bs[9], Cs[9], Ds[9]);
+			endQuiz();
+		}
+	}, 1000);
 
-	if (num == 1) {
-		if (userAnswer === "B") {
-			percent += 10;
+	nextQuestion = (e) => {
+		const num = e.target.value;
+
+		if (num == 0) {
+			homePage.setAttribute("href", "/index.html");
+			return;
 		}
-		setNextQuestion(numQs[0], questions[0], As[0], Bs[0], Cs[0], Ds[0]);
-		next.value = 2;
-		resetBtns();
-	}
-	if (num == 2) {
-		if (userAnswer === "D") {
-			percent += 10;
+
+		next.setAttribute("disabled", "disabled");
+		const userAnswer = getSelectedAnswer("answers");
+
+		if (num == 1) {
+			if (userAnswer === "B") {
+				percent += 10;
+			} else {
+				timer -= 30;
+			}
+			setNextQuestion(numQs[0], questions[0], As[0], Bs[0], Cs[0], Ds[0]);
+			next.value = 2;
+			resetBtns();
 		}
-		setNextQuestion(numQs[1], questions[1], As[1], Bs[1], Cs[1], Ds[1]);
-		next.value = 3;
-		resetBtns();
-	}
-	if (num == 3) {
-		if (userAnswer === "A") {
-			percent += 10;
+		if (num == 2) {
+			if (userAnswer === "D") {
+				percent += 10;
+			} else {
+				timer -= 30;
+			}
+			setNextQuestion(numQs[1], questions[1], As[1], Bs[1], Cs[1], Ds[1]);
+			next.value = 3;
+			resetBtns();
 		}
-		setNextQuestion(numQs[2], questions[2], As[2], Bs[2], Cs[2], Ds[2]);
-		next.value = 4;
-		resetBtns();
-	}
-	if (num == 4) {
-		if (userAnswer === "C") {
-			percent += 10;
+		if (num == 3) {
+			if (userAnswer === "A") {
+				percent += 10;
+			} else {
+				timer -= 30;
+			}
+			setNextQuestion(numQs[2], questions[2], As[2], Bs[2], Cs[2], Ds[2]);
+			next.value = 4;
+			resetBtns();
 		}
-		setNextQuestion(numQs[3], questions[3], As[3], Bs[3], Cs[3], Ds[3]);
-		next.value = 5;
-		resetBtns();
-	}
-	if (num == 5) {
-		if (userAnswer === "A") {
-			percent += 10;
+		if (num == 4) {
+			if (userAnswer === "C") {
+				percent += 10;
+			} else {
+				timer -= 30;
+			}
+			setNextQuestion(numQs[3], questions[3], As[3], Bs[3], Cs[3], Ds[3]);
+			next.value = 5;
+			resetBtns();
 		}
-		setNextQuestion(numQs[4], questions[4], As[4], Bs[4], Cs[4], Ds[4]);
-		next.value = 6;
-		resetBtns();
-	}
-	if (num == 6) {
-		if (userAnswer === "D") {
-			percent += 10;
+		if (num == 5) {
+			if (userAnswer === "A") {
+				percent += 10;
+			} else {
+				timer -= 30;
+			}
+			setNextQuestion(numQs[4], questions[4], As[4], Bs[4], Cs[4], Ds[4]);
+			next.value = 6;
+			resetBtns();
 		}
-		setNextQuestion(numQs[5], questions[5], As[5], Bs[5], Cs[5], Ds[5]);
-		next.value = 7;
-		resetBtns();
-	}
-	if (num == 7) {
-		if (userAnswer === "B") {
-			percent += 10;
+		if (num == 6) {
+			if (userAnswer === "D") {
+				percent += 10;
+			} else {
+				timer -= 30;
+			}
+			setNextQuestion(numQs[5], questions[5], As[5], Bs[5], Cs[5], Ds[5]);
+			next.value = 7;
+			resetBtns();
 		}
-		setNextQuestion(numQs[6], questions[6], As[6], Bs[6], Cs[6], Ds[6]);
-		next.value = 8;
-		resetBtns();
-	}
-	if (num == 8) {
-		if (userAnswer === "D") {
-			percent += 10;
+		if (num == 7) {
+			if (userAnswer === "B") {
+				percent += 10;
+			} else {
+				timer -= 30;
+			}
+			setNextQuestion(numQs[6], questions[6], As[6], Bs[6], Cs[6], Ds[6]);
+			next.value = 8;
+			resetBtns();
 		}
-		setNextQuestion(numQs[7], questions[7], As[7], Bs[7], Cs[7], Ds[7]);
-		next.value = 9;
-		resetBtns();
-	}
-	if (num == 9) {
-		if (userAnswer === "A") {
-			percent += 10;
+		if (num == 8) {
+			if (userAnswer === "D") {
+				percent += 10;
+			} else {
+				timer -= 30;
+			}
+			setNextQuestion(numQs[7], questions[7], As[7], Bs[7], Cs[7], Ds[7]);
+			next.value = 9;
+			resetBtns();
 		}
-		setNextQuestion(numQs[8], questions[8], As[8], Bs[8], Cs[8], Ds[8]);
-		next.value = 10;
-		resetBtns();
-	}
-	if (num == 10) {
-		if (userAnswer === "B") {
-			percent += 10;
+		if (num == 9) {
+			if (userAnswer === "A") {
+				percent += 10;
+			} else {
+				timer -= 30;
+			}
+			setNextQuestion(numQs[8], questions[8], As[8], Bs[8], Cs[8], Ds[8]);
+			next.value = 10;
+			resetBtns();
 		}
-		setNextQuestion(numQs[9], questions[9], As[9], Bs[9], Cs[9], Ds[9]);
+		if (num == 10) {
+			if (userAnswer === "B") {
+				percent += 10;
+			} else {
+				timer -= 30;
+			}
+			setNextQuestion(numQs[9], questions[9], As[9], Bs[9], Cs[9], Ds[9]);
+			endQuiz();
+		}
+	};
+
+	endQuiz = () => {
 		next.value = 0;
 		removeA.remove();
 		removeB.remove();
 		removeC.remove();
 		removeD.remove();
+		askQuestion.remove();
 		enableBtn();
 		next.innerHTML = "Go Home";
 		displayScore.innerHTML = `You score a ${percent} on the quiz!`;
-	}
+	};
+
+	getSelectedAnswer = (name) => {
+		let values = "";
+		const selected = document.querySelectorAll(`input[name="${name}"]:checked`);
+		selected.forEach((answer) => {
+			values = answer.value;
+		});
+		return values;
+	};
+
+	resetBtns = () => {
+		answerA.checked = false;
+		answerB.checked = false;
+		answerC.checked = false;
+		answerD.checked = false;
+	};
+
+	enableBtn = () => {
+		next.removeAttribute("disabled");
+	};
+
+	setNextQuestion = (qNum, q, a, b, c, d) => {
+		questionNum.innerHTML = qNum;
+		askQuestion.innerHTML = q;
+		answer1.innerHTML = a;
+		answer2.innerHTML = b;
+		answer3.innerHTML = c;
+		answer4.innerHTML = d;
+	};
+
+	next.addEventListener("click", nextQuestion);
+	answerA.addEventListener("change", enableBtn);
+	answerB.addEventListener("change", enableBtn);
+	answerC.addEventListener("change", enableBtn);
+	answerD.addEventListener("change", enableBtn);
 };
 
-getSelectedAnswer = (name) => {
-	let values = "";
-	const selected = document.querySelectorAll(`input[name="${name}"]:checked`);
-	selected.forEach((answer) => {
-		values = answer.value;
-	});
-	return values;
-};
-
-resetBtns = () => {
-	answerA.checked = false;
-	answerB.checked = false;
-	answerC.checked = false;
-	answerD.checked = false;
-};
-
-enableBtn = () => {
-	next.removeAttribute("disabled");
-};
-
-setNextQuestion = (qNum, q, a, b, c, d) => {
-	questionNum.innerHTML = qNum;
-	askQuestion.innerHTML = q;
-	answer1.innerHTML = a;
-	answer2.innerHTML = b;
-	answer3.innerHTML = c;
-	answer4.innerHTML = d;
-};
-
-next.addEventListener("click", nextQuestion);
-answerA.addEventListener("change", enableBtn);
-answerB.addEventListener("change", enableBtn);
-answerC.addEventListener("change", enableBtn);
-answerD.addEventListener("change", enableBtn);
+var fiveMinutes = 60 * 5,
+	display = document.querySelector(".countdown");
+startTimer(fiveMinutes, display);

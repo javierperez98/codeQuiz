@@ -23,13 +23,13 @@
 								class="d-flex flex-row justify-content-between align-items-center mcq"
 							>
 								<h4>Code Quiz</h4>
-								<span>(1 of 10)</span>
+								<span class="question-num">(1 of 10)</span>
 							</div>
 						</div>
 						<div class="question p-3 border-bottom">
 							<div class="d-flex flex-row align-items-center question-title">
 								<h3 class="text-danger">Q.</h3>
-								<h5 class="mt-1 ml-2">
+								<h5 class="mt-1 ml-2 ask-question">
 									Inside which HTML element do we put the JavaScript?
 								</h5>
 							</div>
@@ -40,7 +40,7 @@
 										type="radio"
 										name="answers"
 										id="answerA"
-										value=""
+										value="A"
 									/>
 									<span>﹤js﹥</span>
 								</label>
@@ -52,7 +52,7 @@
 										type="radio"
 										name="answers"
 										id="answerB"
-										value=""
+										value="B"
 									/>
 									<span>﹤script﹥</span>
 								</label>
@@ -64,7 +64,7 @@
 										type="radio"
 										name="answers"
 										id="answerC"
-										value=""
+										value="C"
 									/>
 									<span>﹤javaScript﹥</span>
 								</label>
@@ -76,7 +76,7 @@
 										type="radio"
 										name="answers"
 										id="answerD"
-										value=""
+										value="D"
 									/>
 									<span>﹤scripting﹥</span>
 								</label>
@@ -84,8 +84,16 @@
 						</div>
 						<div class="d-flex flex-row justify-content-end align-items-center p-3">
 							<button
-								class="btn btn-primary border-success align-items-center btn-success"
+								disabled
+								class="
+									btn btn-primary
+									border-success
+									align-items-center
+									btn-success
+									next-question
+								"
 								type="button"
+								value="1"
 							>
 								Next<i class="fa fa-angle-right ml-2"></i>
 							</button>
@@ -95,4 +103,5 @@
 			</div>
 		</div>
 	</body>
+	<script src="../js/quiz.js"></script>
 </html>

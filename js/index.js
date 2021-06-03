@@ -14,7 +14,6 @@ const removeB = document.querySelector(".button-B");
 const removeC = document.querySelector(".button-C");
 const removeD = document.querySelector(".button-D");
 const next = document.querySelector(".next-question");
-const homePage = document.querySelector(".home-page");
 var percent = 0;
 
 const numQs = [
@@ -30,7 +29,7 @@ const numQs = [
 	"",
 ];
 const questions = [
-	'What is the correct JavaScript syntax to change the content of the HTML element below? ﹤p﹥ id="demo"﹥This is a demonstration.﹤/p﹥',
+	'What is the correct JavaScript syntax to select ﹤p id="demo"﹥﹤/p﹥',
 	'What is the correct syntax for referring to an external script called "xxx.js"?',
 	'How do you write "Hello World" in an alert box?',
 	"How do you create an arrow function in JavaScript?",
@@ -42,7 +41,7 @@ const questions = [
 	"",
 ];
 const As = [
-	'document.getElement("p").innerHTML = "Hello World!";',
+	'document.getElement("p");',
 	'﹤script src="xxx.js"/﹥',
 	'alertBox("Hello World!")',
 	"myfunction = ( ) => { }",
@@ -54,7 +53,7 @@ const As = [
 	"",
 ];
 const Bs = [
-	'#demo.innerHTML = "Hello World!";',
+	"getElement(#demo);",
 	'﹤script name="xxx.js"/﹥',
 	'setAlert("Hello World!")',
 	"function = myFunction( )",
@@ -66,7 +65,7 @@ const Bs = [
 	"",
 ];
 const Cs = [
-	'document.getElementByName("p").innerHTML = "Hello World!";',
+	'document.selectElement("p")',
 	'﹤script href="xxx.js"/﹥',
 	'alert("Hello World!")',
 	"arrowFunction = myFunction( )",
@@ -78,7 +77,7 @@ const Cs = [
 	"",
 ];
 const Ds = [
-	'document.getElementById("demo").innerHTML = "Hello World!";',
+	'document.querySelector("#demo")',
 	'﹤script link="xxx.js"/﹥',
 	'alertPage("Hello World!")',
 	"myfunction( ) => { }",
@@ -115,7 +114,7 @@ startTimer = (duration, display) => {
 		const num = e.target.value;
 
 		if (num == 0) {
-			homePage.setAttribute("href", "/codeQuiz");
+			location.replace("/codeQuiz");
 			return;
 		}
 

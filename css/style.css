@@ -29,10 +29,6 @@ label.radio input:checked + span {
 	background-color: red;
 }
 
-.ans {
-	margin-left: 36px !important;
-}
-
 .btn:focus {
 	outline: 0 !important;
 	box-shadow: none !important;

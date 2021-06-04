@@ -13,7 +13,7 @@
     <img src="https://img.shields.io/tokei/lines/github/javierperez98/codeQuiz" />
 </p>
 
-<a href="https://javierperez98.github.io/passwordGenerator/"><h1 align="center">Deployed Webpage</h1></a>
+<a href="https://javierperez98.github.io/codeQuiz/"><h1 align="center">Deployed Webpage</h1></a>
 
 
 ## `Description`

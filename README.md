@@ -7,11 +7,14 @@
     <a href="https://github.com/javierperez98"><img src="https://img.shields.io/github/followers/javierperez98?style=social" target="_blank" /></a>
 </p>
 <p align="center">
-    <img src="https://img.shields.io/badge/language-Javascript-yellow" />
+    <img src="https://img.shields.io/badge/language-HTML5-red" />
     <img src="https://img.shields.io/badge/css-Bootstrap-purple" />
     <img src="https://img.shields.io/badge/license-MIT-blue" />
     <img src="https://img.shields.io/tokei/lines/github/javierperez98/codeQuiz" />
 </p>
+
+<a href="https://javierperez98.github.io/passwordGenerator/"><h1 align="center">Deployed Webpage</h1></a>
+
 
 ## `Description`
 
@@ -44,16 +47,6 @@ git clone git@github.com:javierperez98/codeQuiz.git
 
 ```md
 git clone https://github.com/javierperez98/codeQuiz.git
-```
-
-Next you'll have to install all the required node modules by opening the index.js file using terminal/bash and typing in the following command.
-
-```md
-npm i
-or
-npm install
-and then
-npm start
 ```
 
 ## `Usage`
